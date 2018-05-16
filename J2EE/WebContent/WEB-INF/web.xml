@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <context-param>
+    <param-name>sample-path</param-name>
+    <param-value>C:\Java\J2EEeclipse-workspace\J2EE\WebContent\sample</param-value>
+  </context-param>
+  <context-param>
+    <param-name>upload-path</param-name>
+    <param-value>D:\Tomcat\apache-tomcat-8.5.27-windows-x64\apache-tomcat-8.5.27\webapps\J2EE\upload</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>updateMember</servlet-name>
+    <jsp-file>/updateMember.jsp</jsp-file>
+    <init-param>
+      <param-name>defaultGuestName</param-name>
+      <param-value>Guest</param-value>
+    </init-param>
+    <multipart-config>
+      <location>C:\Java\J2EEeclipse-workspace\J2EE\WebContent\upload</location>
+      <max-file-size>20848820</max-file-size>
+      <max-request-size>418018841</max-request-size>
+      <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateMember</servlet-name>
+    <url-pattern>/updateMember.jsp</url-pattern>
+  </servlet-mapping>
+</web-app>
